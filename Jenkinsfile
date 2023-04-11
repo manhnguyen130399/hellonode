@@ -1,5 +1,3 @@
-@Library('my-shared-library') _
-import static com.mycompany.mypipeline.Docker
 node {
     def app
 
@@ -12,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        def docker = new Docker()
+        docker version
         app = docker.build("releaseworks/hellonode")
     }
 
